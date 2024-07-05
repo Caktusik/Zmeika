@@ -19,16 +19,16 @@ namespace Zmeika
                 keyInfo = Console.ReadKey();
                 switch (keyInfo.Key)
                 {
-                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.W:
                         GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Up;
                         break;
-                    case ConsoleKey.DownArrow:
+                    case ConsoleKey.S:
                         GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Down;
                         break;
-                    case ConsoleKey.RightArrow:
+                    case ConsoleKey.D:
                         GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Right;
                         break;
-                    case ConsoleKey.LeftArrow:
+                    case ConsoleKey.A:
                         GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Left;
                         break;
                 }
