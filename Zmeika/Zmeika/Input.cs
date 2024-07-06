@@ -20,16 +20,20 @@ namespace Zmeika
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.W:
-                        GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Up;
+                        if(GameData.GetInstance().CurrentKey != GameData.ZmeykaVector.Down)
+                            GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Up;
                         break;
                     case ConsoleKey.S:
-                        GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Down;
+                        if (GameData.GetInstance().CurrentKey != GameData.ZmeykaVector.Up)
+                            GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Down;
                         break;
                     case ConsoleKey.D:
-                        GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Right;
+                        if (GameData.GetInstance().CurrentKey != GameData.ZmeykaVector.Left)
+                            GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Right;
                         break;
                     case ConsoleKey.A:
-                        GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Left;
+                        if (GameData.GetInstance().CurrentKey != GameData.ZmeykaVector.Right)    
+                            GameData.GetInstance().CurrentKey = GameData.ZmeykaVector.Left;
                         break;
                 }
             }

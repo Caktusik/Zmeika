@@ -18,7 +18,7 @@ namespace Zmeika
             }
             return _instance;
         }
-        public int[] Cords { get; set; } = new int[2] { 10, 10 };
+        public List<Vector2Int> teloZmeiki = new List<Vector2Int>();
         public enum ZmeykaVector
         {
             Left,
@@ -27,5 +27,8 @@ namespace Zmeika
             Down
         }
         public ZmeykaVector CurrentKey = ZmeykaVector.Up;
+        public bool IsGameGO = true;
+        public int sms;
+        public int level;
     }
 }

@@ -42,8 +42,8 @@ namespace Shared
             width = Console.WindowWidth;
             height = Console.WindowHeight;
 
-            _pixels = new char[_maxWidth, _maxHeight];
-            _pixelColors = new byte[_maxWidth, _maxHeight];
+            _pixels = new char[width, height];
+            _pixelColors = new byte[width, height];
         }
 
         public void SetPixel(int w, int h, char val, byte colorIdx)
@@ -150,6 +150,20 @@ namespace Shared
                 }
 
             return hash;
+        }
+        public void DrawMap()
+        {
+            for (int i = 3; i < 110; i++)
+            {
+                SetPixel(i, 3, '#', 2);
+                SetPixel(i, 27, '#', 2);
+            }
+            for (int i = 3; i < 27; i++)
+            {
+                SetPixel(3, i, '#', 2);
+                SetPixel(110, i, '#', 2);
+            }
+            SetPixel(110, 27, '#', 2);
         }
     }
 }
