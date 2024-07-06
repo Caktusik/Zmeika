@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,24 +9,35 @@ namespace Zmeika
 {
     internal class Player
     {
-        public void CalculateCord()
+        ConsoleRenderer renderer;
+        public Player(ConsoleRenderer renderer ) 
         {
-            
+            this.renderer = renderer;
+        }
+        public void CalculateCord()
+        { 
             switch (GameData.GetInstance().CurrentKey)
             {
                 case GameData.ZmeykaVector.Left:
-                    GameData.GetInstance().Cords[0] -=1;
+                    if (GameData.GetInstance().Cords[0] - 1 >= 0)
+                        renderer.SetPixel(GameData.GetInstance().Cords[0], GameData.GetInstance().Cords[1], ' ', 0);
+                        GameData.GetInstance().Cords[0] -=1;
                     break;
                 case GameData.ZmeykaVector.Right:
-                    GameData.GetInstance().Cords[0] += 1;
+                    if (GameData.GetInstance().Cords[0] + 1 < Console.LargestWindowWidth)
+                        renderer.SetPixel(GameData.GetInstance().Cords[0], GameData.GetInstance().Cords[1], ' ', 0);
+                        GameData.GetInstance().Cords[0] += 1;
                     break;
                 case GameData.ZmeykaVector.Up:
-                    GameData.GetInstance().Cords[1] -= 1;
+                    if (GameData.GetInstance().Cords[1] - 1 >= 0)
+                        renderer.SetPixel(GameData.GetInstance().Cords[0], GameData.GetInstance().Cords[1], ' ', 0);
+                        GameData.GetInstance().Cords[1] -= 1; 
                     break;
                 case GameData.ZmeykaVector.Down:
-                    GameData.GetInstance().Cords[1] += 1;
+                    if (GameData.GetInstance().Cords[1] + 1 < Console.LargestWindowHeight)
+                        renderer.SetPixel(GameData.GetInstance().Cords[0], GameData.GetInstance().Cords[1], ' ', 0);
+                        GameData.GetInstance().Cords[1] += 1;
                     break;
-
             }
         }
     }
