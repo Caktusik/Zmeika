@@ -17,7 +17,7 @@ namespace Zmeika
         }
         public void PrintCord(int[] Cords)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.CursorVisible = CursorVisible;
             Console.SetCursorPosition(4, 0);
             Console.Write("   ");
